@@ -155,16 +155,16 @@ tbody tr:hover { background:#f7fbff; }
 messages_db = [
     {"id": 1, "partenaire": "Fournisseur A", "type": "Avis d'expédition", "numero": "MSG-001", "statut": "Envoyé", "date": "Lun 13/07/2026 (07:00)"},
     {"id": 2, "partenaire": "Client B", "type": "Facture", "numero": "MSG-002", "statut": "Envoyé", "date": "Lun 13/07/2026 (08:00)"},
-    # {"id": 3, "partenaire": "Fournisseur C", "type": "Avis d'expédition", "numero": "MSG-003", "statut": "Envoyé", "date": "Mar 14/07/2026 (09:00)"},
-    # {"id": 4, "partenaire": "Fournisseur D", "type": "Avis d'expédition", "numero": "MSG-004", "statut": "Envoyé", "date": "Mer 15/07/2026 (10:00)"},
-    # {"id": 5, "partenaire": "Fournisseur E", "type": "Avis d'expédition", "numero": "MSG-005", "statut": "Envoyé", "date": "Mer 15/07/2026 (11:00)"},
-    # {"id": 6, "partenaire": "Fournisseur F", "type": "Avis d'expédition", "numero": "MSG-006", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    #  {"id":7, "partenaire": "Fournisseur K", "type": "Avis d'expédition", "numero": "MSG-007", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    # {"id":8, "partenaire": "Fournisseur Y", "type": "Avis d'expédition", "numero": "MSG-008", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    # {"id":9, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-009", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    # {"id":10, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-0010", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    # {"id":11, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0011", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    # {"id":12, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0012", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id": 3, "partenaire": "Fournisseur C", "type": "Avis d'expédition", "numero": "MSG-003", "statut": "Envoyé", "date": "Mar 14/07/2026 (09:00)"},
+    {"id": 4, "partenaire": "Fournisseur D", "type": "Avis d'expédition", "numero": "MSG-004", "statut": "Envoyé", "date": "Mer 15/07/2026 (10:00)"},
+    {"id": 5, "partenaire": "Fournisseur E", "type": "Avis d'expédition", "numero": "MSG-005", "statut": "Envoyé", "date": "Mer 15/07/2026 (11:00)"},
+    {"id": 6, "partenaire": "Fournisseur F", "type": "Avis d'expédition", "numero": "MSG-006", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+     {"id":7, "partenaire": "Fournisseur K", "type": "Avis d'expédition", "numero": "MSG-007", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id":8, "partenaire": "Fournisseur Y", "type": "Avis d'expédition", "numero": "MSG-008", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id":9, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-009", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id":10, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-0010", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id":11, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0011", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id":12, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0012", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
 
 ]
 
@@ -187,12 +187,15 @@ def messages():
         return redirect(url_for("login"))
     return render_template_string(MESSAGES_TABLE, messages=messages_db)
 
+@app.route("/signup", methods=["POST"])
+def signup():
+    pass
+
 @app.route("/download/<int:msg_id>")
 def download_pdf(msg_id):
     if not session.get("logged_in"):
         return redirect(url_for("login"))
 
-    # Associer chaque ID à un fichier PDF réel spécifique
     pdf_files = {
         1: "BL_000391.pdf",
         3: "BL_000394.pdf",

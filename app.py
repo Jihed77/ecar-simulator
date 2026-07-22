@@ -162,6 +162,7 @@ messages_db = [
      {"id":7, "partenaire": "Fournisseur K", "type": "Avis d'expédition", "numero": "MSG-007", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
     {"id":8, "partenaire": "Fournisseur Y", "type": "Avis d'expédition", "numero": "MSG-008", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
     {"id":9, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-009", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id":10, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-0010", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
 
 ]
 
@@ -197,6 +198,7 @@ def download_pdf(msg_id):
         7:"BL_000401.pdf",
         8:"BL_000402.pdf",
         9:"BL_000403.pdf",
+        10:"BL_000400.pdf",
         # Ajoutez d'autres correspondances si vous voulez
     }
 

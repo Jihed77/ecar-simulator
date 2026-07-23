@@ -157,8 +157,8 @@ messages_db = [
     {"id": 2, "partenaire": "Client B", "type": "Facture", "numero": "MSG-002", "statut": "Envoyé", "date": "Lun 13/07/2026 (08:00)"},
     {"id": 3, "partenaire": "Fournisseur C", "type": "Avis d'expédition", "numero": "MSG-003", "statut": "Envoyé", "date": "Mar 14/07/2026 (09:00)"},
     {"id": 4, "partenaire": "Fournisseur D", "type": "Avis d'expédition", "numero": "MSG-004", "statut": "Envoyé", "date": "Mer 15/07/2026 (10:00)"},
-    # {"id": 5, "partenaire": "Fournisseur E", "type": "Avis d'expédition", "numero": "MSG-005", "statut": "Envoyé", "date": "Mer 15/07/2026 (11:00)"},
-    # {"id": 6, "partenaire": "Fournisseur F", "type": "Avis d'expédition", "numero": "MSG-006", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id": 5, "partenaire": "Fournisseur E", "type": "Avis d'expédition", "numero": "MSG-005", "statut": "Envoyé", "date": "Mer 15/07/2026 (11:00)"},
+    {"id": 6, "partenaire": "Fournisseur F", "type": "Avis d'expédition", "numero": "MSG-006", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
      {"id":7, "partenaire": "Fournisseur K", "type": "Avis d'expédition", "numero": "MSG-007", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
     {"id":8, "partenaire": "Fournisseur Y", "type": "Avis d'expédition", "numero": "MSG-008", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
     {"id":9, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-009", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
@@ -198,15 +198,15 @@ def download_pdf(msg_id):
         return redirect(url_for("login"))
 
     pdf_files = {
-        1: "BL_000391.pdf",
-        3: "BL_000394.pdf",
-        4: "BL_000391_removed.pdf",
-        7:"BL_000401.pdf",
-        8:"BL_000402.pdf",
-        9:"BL_000403.pdf",
-        10:"BL_000400.pdf",
-        11:"BL_000405.pdf",
-        12:"BL_000404.pdf",
+        1:  "BL_000391.pdf",
+        3:  "BL_000394.pdf",
+        4:  "BL_000391_removed.pdf",
+        7:  "BL_000401.pdf",
+        8:  "BL_000402.pdf",
+        9:  "BL_000403.pdf",
+        10: "BL_000400.pdf",
+        11: "BL_000405.pdf",
+        12: "BL_000404.pdf",
         13: "BL_000394.pdf",
     }
 

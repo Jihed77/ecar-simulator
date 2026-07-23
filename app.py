@@ -157,15 +157,15 @@ messages_db = [
     {"id": 2, "partenaire": "Client B", "type": "Facture", "numero": "MSG-002", "statut": "Envoyé", "date": "Lun 13/07/2026 (08:00)"},
     {"id": 3, "partenaire": "Fournisseur C", "type": "Avis d'expédition", "numero": "MSG-003", "statut": "Envoyé", "date": "Mar 14/07/2026 (09:00)"},
     {"id": 4, "partenaire": "Fournisseur D", "type": "Avis d'expédition", "numero": "MSG-004", "statut": "Envoyé", "date": "Mer 15/07/2026 (10:00)"},
-    {"id": 5, "partenaire": "Fournisseur E", "type": "Avis d'expédition", "numero": "MSG-005", "statut": "Envoyé", "date": "Mer 15/07/2026 (11:00)"},
-    {"id": 6, "partenaire": "Fournisseur F", "type": "Avis d'expédition", "numero": "MSG-006", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    # {"id": 5, "partenaire": "Fournisseur E", "type": "Avis d'expédition", "numero": "MSG-005", "statut": "Envoyé", "date": "Mer 15/07/2026 (11:00)"},
+    # {"id": 6, "partenaire": "Fournisseur F", "type": "Avis d'expédition", "numero": "MSG-006", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
      {"id":7, "partenaire": "Fournisseur K", "type": "Avis d'expédition", "numero": "MSG-007", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
     {"id":8, "partenaire": "Fournisseur Y", "type": "Avis d'expédition", "numero": "MSG-008", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
     {"id":9, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-009", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    #{"id":10, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-0010", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    #{"id":11, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0011", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    #{"id":12, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0012", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    #{"id":13, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0013", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id":10, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-0010", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id":11, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0011", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id":12, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0012", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id":13, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0013", "statut": "Envoyé", "date": "Jeu 14/07/2026 (12:00)"},
 
 ]
 
@@ -207,8 +207,7 @@ def download_pdf(msg_id):
         10:"BL_000400.pdf",
         11:"BL_000405.pdf",
         12:"BL_000404.pdf",
-        13: "BL_000394.pdf"
-        # Ajoutez d'autres correspondances si vous voulez
+        13: "BL_000394.pdf",
     }
 
     if msg_id in pdf_files:

@@ -153,9 +153,9 @@ tbody tr:hover { background:#f7fbff; }
 
 # Base de données factice (vous pouvez l'enrichir)
 messages_db = [
-    {"id": 1, "partenaire": "Fournisseur A", "type": "Avis d'expédition", "numero": "MSG-001", "statut": "Envoyé", "date": "Lun 13/07/2026 (07:00)"},
-    {"id": 2, "partenaire": "Client B", "type": "Facture", "numero": "MSG-002", "statut": "Envoyé", "date": "Lun 13/07/2026 (08:00)"},
-    {"id": 3, "partenaire": "Fournisseur C", "type": "Avis d'expédition", "numero": "MSG-003", "statut": "Envoyé", "date": "Mar 14/07/2026 (09:00)"},
+    # {"id": 1, "partenaire": "Fournisseur A", "type": "Avis d'expédition", "numero": "MSG-001", "statut": "Envoyé", "date": "Lun 13/07/2026 (07:00)"},
+    #  {"id": 2, "partenaire": "Client B", "type": "Facture", "numero": "MSG-002", "statut": "Envoyé", "date": "Lun 13/07/2026 (08:00)"},
+    #  {"id": 3, "partenaire": "Fournisseur C", "type": "Avis d'expédition", "numero": "MSG-003", "statut": "Envoyé", "date": "Mar 14/07/2026 (09:00)"},
     {"id": 4, "partenaire": "Fournisseur D", "type": "Avis d'expédition", "numero": "MSG-004", "statut": "Envoyé", "date": "Mer 15/07/2026 (10:00)"},
     {"id": 5, "partenaire": "Fournisseur E", "type": "Avis d'expédition", "numero": "MSG-005", "statut": "Envoyé", "date": "Mer 15/07/2026 (11:00)"},
     {"id": 6, "partenaire": "Fournisseur F", "type": "Avis d'expédition", "numero": "MSG-006", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
@@ -166,6 +166,7 @@ messages_db = [
     {"id":11, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0011", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
     {"id":12, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0012", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
     {"id":13, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0013", "statut": "Envoyé", "date": "Jeu 14/07/2026 (12:00)"},
+    {"id":14, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0014", "statut": "Envoyé", "date": "Jeu 14/07/2026 (12:00)"},
 
 ]
 
@@ -188,9 +189,6 @@ def messages():
         return redirect(url_for("login"))
     return render_template_string(MESSAGES_TABLE, messages=messages_db)
 
-@app.route("/signup", methods=["POST"])
-def signup():
-    pass
 
 @app.route("/download/<int:msg_id>")
 def download_pdf(msg_id):
@@ -208,6 +206,7 @@ def download_pdf(msg_id):
         11: "BL_000405.pdf",
         12: "BL_000404.pdf",
         13: "BL_000394.pdf",
+        14:"delinsME26072302560322.csv",
     }
 
     if msg_id in pdf_files:

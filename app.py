@@ -135,7 +135,7 @@ tbody tr:hover { background:#f7fbff; }
 <td class="status">{{msg.statut}}</td>
 <td>{{msg.date}}</td>
 <td class="actions">
-{% if msg.type=="Avis d'expédition" || msg.type=="Programme de Livraison Prévisionnel" %}
+{% if msg.type=="Avis d'expédition" or msg.type=="Programme de Livraison Prévisionnel" %}
 <a href="/imprimer/{{msg.id}}"><img src='""" + ICON_IMPRIMER + """' alt=""></a>
 <a href="/download/{{msg.id}}"><img src='""" + ICON_TELECHARGER + """' alt=""></a>
 {% endif %}

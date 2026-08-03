@@ -1,5 +1,6 @@
 import os
 import io
+from pathlib import Path
 from flask import Flask, request, render_template_string, send_file, session, redirect, url_for
 
 app = Flask(__name__)
@@ -153,21 +154,17 @@ tbody tr:hover { background:#f7fbff; }
 
 # Base de données factice (vous pouvez l'enrichir)
 messages_db = [
-    # {"id": 1, "partenaire": "Fournisseur A", "type": "Avis d'expédition", "numero": "MSG-001", "statut": "Envoyé", "date": "Lun 13/07/2026 (07:00)"},
-    #  {"id": 2, "partenaire": "Client B", "type": "Facture", "numero": "MSG-002", "statut": "Envoyé", "date": "Lun 13/07/2026 (08:00)"},
-    #  {"id": 3, "partenaire": "Fournisseur C", "type": "Avis d'expédition", "numero": "MSG-003", "statut": "Envoyé", "date": "Mar 14/07/2026 (09:00)"},
     {"id": 4, "partenaire": "Fournisseur D", "type": "Avis d'expédition", "numero": "MSG-004", "statut": "Envoyé", "date": "Mer 15/07/2026 (10:00)"},
     {"id": 5, "partenaire": "Fournisseur E", "type": "Avis d'expédition", "numero": "MSG-005", "statut": "Envoyé", "date": "Mer 15/07/2026 (11:00)"},
     {"id": 6, "partenaire": "Fournisseur F", "type": "Avis d'expédition", "numero": "MSG-006", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-     {"id":7, "partenaire": "Fournisseur K", "type": "Avis d'expédition", "numero": "MSG-007", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    {"id":8, "partenaire": "Fournisseur Y", "type": "Avis d'expédition", "numero": "MSG-008", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    {"id":9, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-009", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    {"id":10, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-0010", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    {"id":11, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0011", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    {"id":12, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0012", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    {"id":13, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0013", "statut": "Envoyé", "date": "Jeu 14/07/2026 (12:00)"},
-    {"id":14, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0014", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
-
+    {"id": 7, "partenaire": "Fournisseur K", "type": "Avis d'expédition", "numero": "MSG-007", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id": 8, "partenaire": "Fournisseur Y", "type": "Avis d'expédition", "numero": "MSG-008", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id": 9, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-009", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id": 10, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-0010", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id": 11, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0011", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id": 12, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0012", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id": 13, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0013", "statut": "Envoyé", "date": "Jeu 14/07/2026 (12:00)"},
+    {"id": 14, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0014", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
 ]
 
 @app.route("/")
@@ -189,7 +186,6 @@ def messages():
         return redirect(url_for("login"))
     return render_template_string(MESSAGES_TABLE, messages=messages_db)
 
-
 @app.route("/download/<int:msg_id>")
 def download_pdf(msg_id):
     if not session.get("logged_in"):
@@ -206,17 +202,30 @@ def download_pdf(msg_id):
         11: "BL_000405.pdf",
         12: "BL_000404.pdf",
         13: "BL_000394.pdf",
-        14:"delinsME26072302560322.csv",
+        14: "delinsME26072302560322.csv",
     }
 
     if msg_id in pdf_files:
-        # Chercher dans le dossier "data" à côté de ce script
-        pdf_path = os.path.join(app.root_path, "data", pdf_files[msg_id])
-        if os.path.exists(pdf_path):
-            return send_file(pdf_path, mimetype="application/pdf",
-                             as_attachment=True, download_name=f"message_{msg_id}.pdf")
-        else:
-            return f"Fichier {pdf_files[msg_id]} introuvable sur le serveur.", 404
+        file_name = pdf_files[msg_id]
+        file_path = os.path.join(app.root_path, "data", file_name)
+        if not os.path.exists(file_path):
+            return f"Fichier {file_name} introuvable sur le serveur.", 404
+
+        # Déterminer le type MIME selon l'extension
+        ext = Path(file_name).suffix.lower()
+        mime_map = {
+            '.pdf': 'application/pdf',
+            '.csv': 'text/csv',
+            '.xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        }
+        mime = mime_map.get(ext, 'application/octet-stream')
+
+        return send_file(
+            file_path,
+            mimetype=mime,
+            as_attachment=True,
+            download_name=file_name   # nom original
+        )
 
     # PDF factice pour les autres messages
     pdf_content = b"%PDF-1.4\n1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj\n2 0 obj<</Type/Pages/Kids[3 0 R]/Count 1>>endobj\n3 0 obj<</Type/Page/MediaBox[0 0 612 792]/Parent 2 0 R>>endobj\nxref\n0 4\n0000000000 65535 f\n0000000009 00000 n\n0000000052 00000 n\n0000000101 00000 n\ntrailer<</Size 4/Root 1 0 R>>\nstartxref\n190\n%%EOF"

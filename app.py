@@ -136,7 +136,7 @@ tbody tr:hover { background:#f7fbff; }
 <td class="status">{{msg.statut}}</td>
 <td>{{msg.date}}</td>
 <td class="actions">
-{% if msg.type=="Avis d'expédition" or msg.type=="Programme de Livraison Prévisionnel" %}
+{% if msg.type=="Avis d'expédition" or msg.type=="Programme de Livraison Prévisionnel" or msg.type=="Appel de livraison" %}
 <a href="/imprimer/{{msg.id}}"><img src='""" + ICON_IMPRIMER + """' alt=""></a>
 <a href="/download/{{msg.id}}"><img src='""" + ICON_TELECHARGER + """' alt=""></a>
 {% endif %}
@@ -152,7 +152,7 @@ tbody tr:hover { background:#f7fbff; }
 </html>
 """
 
-# Base de données factice (vous pouvez l'enrichir)
+# Base de données factice
 messages_db = [
     {"id": 4, "partenaire": "Fournisseur D", "type": "Avis d'expédition", "numero": "MSG-004", "statut": "Envoyé", "date": "Mer 15/07/2026 (10:00)"},
     {"id": 5, "partenaire": "Fournisseur E", "type": "Avis d'expédition", "numero": "MSG-005", "statut": "Envoyé", "date": "Mer 15/07/2026 (11:00)"},
@@ -165,6 +165,7 @@ messages_db = [
     {"id": 12, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0012", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
     {"id": 13, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0013", "statut": "Envoyé", "date": "Jeu 14/07/2026 (12:00)"},
     {"id": 14, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0014", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 15, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0015", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
 ]
 
 @app.route("/")
@@ -203,6 +204,7 @@ def download_pdf(msg_id):
         12: "BL_000404.pdf",
         13: "BL_000394.pdf",
         14: "delinsME26072302560322.csv",
+        15: "Appel_de_Livraison.pdf",
     }
 
     if msg_id in pdf_files:
@@ -211,7 +213,6 @@ def download_pdf(msg_id):
         if not os.path.exists(file_path):
             return f"Fichier {file_name} introuvable sur le serveur.", 404
 
-        # Déterminer le type MIME selon l'extension
         ext = Path(file_name).suffix.lower()
         mime_map = {
             '.pdf': 'application/pdf',
@@ -224,10 +225,10 @@ def download_pdf(msg_id):
             file_path,
             mimetype=mime,
             as_attachment=True,
-            download_name=file_name   # nom original
+            download_name=file_name
         )
 
-    # PDF factice pour les autres messages
+    # PDF factice
     pdf_content = b"%PDF-1.4\n1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj\n2 0 obj<</Type/Pages/Kids[3 0 R]/Count 1>>endobj\n3 0 obj<</Type/Page/MediaBox[0 0 612 792]/Parent 2 0 R>>endobj\nxref\n0 4\n0000000000 65535 f\n0000000009 00000 n\n0000000052 00000 n\n0000000101 00000 n\ntrailer<</Size 4/Root 1 0 R>>\nstartxref\n190\n%%EOF"
     return send_file(io.BytesIO(pdf_content), mimetype="application/pdf",
                      as_attachment=True, download_name=f"message_{msg_id}.pdf")

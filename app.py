@@ -166,7 +166,11 @@ messages_db = [
     {"id": 13, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0013", "statut": "Envoyé", "date": "Jeu 14/07/2026 (12:00)"},
     {"id": 14, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0014", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
     {"id": 15, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0015", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
-]
+    {"id": 16, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0016", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 17, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0017", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 18, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0018", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 19, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0019", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+]   
 
 @app.route("/")
 def index():
@@ -205,6 +209,10 @@ def download_pdf(msg_id):
         13: "BL_000394.pdf",
         14: "delinsME26072302560322.csv",
         15: "Appel_de_Livraison.pdf",
+        16: "Appel_de_Livraison2.pdf",
+        17: "Appel_de_Livraison3.pdf",
+        18: "delinsME26051302470338.csv",
+        19:"delinsME26052702100325.csv",
     }
 
     if msg_id in pdf_files:

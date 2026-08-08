@@ -169,7 +169,7 @@ messages_db = [
     {"id": 16, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0016", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
     # {"id": 17, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0017", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
     {"id": 18, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0018", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
-    # {"id": 19, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0019", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 19, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0019", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
 ]   
 
 @app.route("/")

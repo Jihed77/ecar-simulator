@@ -164,7 +164,7 @@ messages_db = [
     # {"id": 11, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0011", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
     # {"id": 12, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0012", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
     # {"id": 13, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0013", "statut": "Envoyé", "date": "Jeu 14/07/2026 (12:00)"},
-    # {"id": 14, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0014", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 14, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0014", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
     {"id": 15, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0015", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
     {"id": 16, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0016", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
     # {"id": 17, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0017", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},

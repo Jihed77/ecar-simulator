@@ -158,18 +158,38 @@ messages_db = [
     {"id": 5, "partenaire": "Fournisseur E", "type": "Avis d'expédition", "numero": "MSG-005", "statut": "Envoyé", "date": "Mer 15/07/2026 (11:00)"},
     {"id": 6, "partenaire": "Fournisseur F", "type": "Avis d'expédition", "numero": "MSG-006", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
     {"id": 7, "partenaire": "Fournisseur K", "type": "Avis d'expédition", "numero": "MSG-007", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    # {"id": 8, "partenaire": "Fournisseur Y", "type": "Avis d'expédition", "numero": "MSG-008", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    # {"id": 9, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-009", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    # {"id": 10, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-0010", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id": 8, "partenaire": "Fournisseur Y", "type": "Avis d'expédition", "numero": "MSG-008", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id": 9, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-009", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id": 10, "partenaire": "Fournisseur W", "type": "Avis d'expédition", "numero": "MSG-0010", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
     {"id": 11, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0011", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    # {"id": 12, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0012", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
-    # {"id": 13, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0013", "statut": "Envoyé", "date": "Jeu 14/07/2026 (12:00)"},
+    {"id": 12, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0012", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},
+    {"id": 13, "partenaire": "Fournisseur 10", "type": "Avis d'expédition", "numero": "MSG-0013", "statut": "Envoyé", "date": "Jeu 14/07/2026 (12:00)"},
     {"id": 14, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0014", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
     {"id": 15, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0015", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
     {"id": 16, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0016", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
     {"id": 17, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0017", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
     {"id": 18, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0018", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
     {"id": 19, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0019", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 20, "partenaire": "Fournisseur D", "type": "Avis d'expédition", "numero": "MSG-0020", "statut": "Envoyé", "date": "Mer 15/07/2026 (10:00)"},
+    {"id": 21, "partenaire": "Fournisseur D", "type": "Avis d'expédition", "numero": "MSG-0021", "statut": "Envoyé", "date": "Mer 15/07/2026 (10:00)"},
+
+
+
+    {"id": 22, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0022", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 23, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0023", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 24, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0024", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 25, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0025", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 26, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0026", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 27, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0027", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 28, "partenaire": "Fournisseur 10", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0028", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+
+
+    {"id": 29, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0029", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 30, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0030", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 31, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0031", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+
+
+
 ]   
 
 @app.route("/")
@@ -213,6 +233,23 @@ def download_pdf(msg_id):
         17: "Appel_de_Livraison3.pdf",
         18: "delinsME26051302470338.csv",
         19:"delinsME26052702100325.csv",
+        20:"BL_000391 - Copie (2).pdf",
+        21:"BL_000391 - Copie.pdf",
+
+
+        28:"delinsME26051302470338 - Copie (2).csv",
+        22:"delinsME26051302470338 - Copie (3).csv",
+        23:"delinsME26051302470338 - Copie.csv",
+        24:"delinsME26070902200319 - Copie (2).csv",
+        25:"delinsME26070902200319 - Copie.csv",
+        26:"delinsME26072302560322 - Copie (2).csv",
+        27:"delinsME26072302560322 - Copie.csv",
+
+
+
+        29:"Appel_de_Livraison - Copie.pdf",
+        30:"Appel_de_Livraison2 - Copie.pdf",
+        31:"Appel_de_Livraison3 - Copie.pdf",
     }
 
     if msg_id in pdf_files:

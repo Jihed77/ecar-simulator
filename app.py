@@ -187,6 +187,8 @@ messages_db = [
     {"id": 29, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0029", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
     {"id": 30, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0030", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
     {"id": 31, "partenaire": "Fournisseur 10", "type": "Appel de livraison", "numero": "MSG-0031", "statut": "Envoyé", "date": "Jeu 15/07/2026 (12:00)"},
+    {"id": 32, "partenaire": "Fournisseur D", "type": "Avis d'expédition", "numero": "MSG-0032", "statut": "Envoyé", "date": "Mer 17/07/2026 (10:00)"},
+
 
 
 
@@ -250,6 +252,7 @@ def download_pdf(msg_id):
         29:"Appel_de_Livraison - Copie.pdf",
         30:"Appel_de_Livraison2 - Copie.pdf",
         31:"Appel_de_Livraison3 - Copie.pdf",
+        32:"BL_000391_removed - Copie.pdf",
     }
 
     if msg_id in pdf_files:

@@ -154,7 +154,7 @@ tbody tr:hover { background:#f7fbff; }
 
 # Base de données factice
 messages_db = [
-    # {"id": 4, "partenaire": "Fournisseur D", "type": "Avis d'expédition", "numero": "MSG-004", "statut": "Envoyé", "date": "Mer 17/07/2026 (10:00)"},
+    {"id": 4, "partenaire": "Fournisseur D", "type": "Avis d'expédition", "numero": "MSG-004", "statut": "Envoyé", "date": "Mer 17/07/2026 (10:00)"},
     # {"id": 5, "partenaire": "Fournisseur E", "type": "Avis d'expédition", "numero": "MSG-005", "statut": "Envoyé", "date": "Mer 17/07/2026 (11:00)"},
     # {"id": 6, "partenaire": "Fournisseur F", "type": "Avis d'expédition", "numero": "MSG-006", "statut": "Envoyé", "date": "Jeu 17/07/2026 (12:00)"},
     # {"id": 7, "partenaire": "Fournisseur K", "type": "Avis d'expédition", "numero": "MSG-007", "statut": "Envoyé", "date": "Jeu 16/07/2026 (12:00)"},

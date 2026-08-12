@@ -192,6 +192,17 @@ messages_db = [
 
 
 
+
+
+
+    # {"id": 33, "partenaire": "Fournisseur D", "type": "Avis d'expédition", "numero": "MSG-0033", "statut": "Envoyé", "date": "Mer 19/07/2026 (10:00)"},
+    {"id": 34, "partenaire": "Fournisseur F", "type": "Programme de Livraison Prévisionnel", "numero": "MSG-0034", "statut": "Envoyé", "date": "Jeu 19/07/2026 (12:00)"},
+    # {"id": 35, "partenaire": "Fournisseur F", "type": "Appel de livraison", "numero": "MSG-0035", "statut": "Envoyé", "date": "Jeu 19/07/2026 (12:00)"},
+
+
+
+
+
 ]   
 
 @app.route("/")
@@ -253,6 +264,10 @@ def download_pdf(msg_id):
         30:"Appel_de_Livraison2 - Copie.pdf",
         31:"Appel_de_Livraison3 - Copie.pdf",
         32:"BL_000391_removed - Copie.pdf",
+
+        # 33:"",
+        34:"delinsME26081204120326.csv",
+        # 35:"",
     }
 
     if msg_id in pdf_files:
